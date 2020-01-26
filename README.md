@@ -3,6 +3,6 @@
 :closed_books: Mandatory school project involving the game "snakes and ladders"
 
 ## Project members:
-:nerd_face: Francis Soliman Dyrhovden
-:nerd_face: Johann Bugge
-:nerd_face: Lasse Furdal Hansen
+- :nerd_face: Francis Soliman Dyrhovden
+- :nerd_face: Johann Bugge
+- :nerd_face: Lasse Furdal Hansen
