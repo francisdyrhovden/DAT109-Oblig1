@@ -1,10 +1,10 @@
 package no.hvl.dat109;
 
-public class Ruter {
+public class Rute {
 	
 	private int tall;
 	
-	public Ruter(int tall) {
+	public Rute(int tall) {
 		this.tall = tall;
 	}
 

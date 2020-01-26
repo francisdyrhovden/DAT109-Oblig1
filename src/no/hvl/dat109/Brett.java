@@ -1,10 +1,25 @@
 package no.hvl.dat109;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Brett {
 	
-	private Ruter[] ruter;
+	private List<Rute> ruter;
 	
 	public Brett() {
-		this.ruter = new Ruter[100];
+		ruter = new ArrayList<Rute>();
+		for (int i = 0; i < 100; i++) {
+			ruter.add(new Rute(i));
+		}
 	}
+	
+	public Rute finnNyRute(Rute rute, int verdi) {
+		int nyRute = rute.getTall() + verdi;
+		return ruter.get(nyRute);
+	}
+	
+
+	
+	
 }

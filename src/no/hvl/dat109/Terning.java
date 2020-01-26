@@ -10,8 +10,15 @@ public class Terning {
 		this.verdi = 0;
 	}
 	
-	public int trill() {
+	public void trill() {
 		verdi = new Random().nextInt(6) + 1;
+	}
+
+	public int getVerdi() {
 		return verdi;
+	}
+
+	public void setVerdi(int verdi) {
+		this.verdi = verdi;
 	}
 }
