@@ -2,6 +2,12 @@ package no.hvl.dat109;
 
 import java.util.Scanner;
 
+
+/**
+ * @author Francis, Johann og Lasse
+ * 
+ *	En simulering av et stigespill
+ */
 public class Stigespill {
 
 	private final static int WINPOINT = 99;
@@ -11,14 +17,21 @@ public class Stigespill {
 	private Spiller[] spillere;
 	private Spiller vinner;
 
+	
+	/**
+	 * Oppretter et nytt stigespill objekt 
+	 */
 	public Stigespill() {
 		this.terning = new Terning();
 		this.brett = new Brett();
 		this.vinner = null;
 	}
 
+	
+	/**
+	 * Starter selve spillet 
+	 */
 	public void run() {
-
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Spillet er klar til å starte.\n Skriv inn antall spillere (2-4)");
 		int antall = sc.nextInt();
@@ -39,6 +52,9 @@ public class Stigespill {
 		System.out.println(vinner.getNavn() + " har vunnet");
 	}
 
+	/**
+	 * Starter en ny runde i spillet
+	 */
 	public void spillRunde() {
 		
 		for (Spiller s : spillere) {
