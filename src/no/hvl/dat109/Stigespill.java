@@ -69,7 +69,6 @@ public class Stigespill {
 		}
 	}
 	
-	
 	/**
 	 * Sjekker om spilleren har vunnet.
 	 * 

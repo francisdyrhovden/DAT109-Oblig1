@@ -63,7 +63,7 @@ public class Brett {
 		if (nyRute <= 99) {
 			return ruter.get(nyRute);	
 		} else {
-			return ruter.get(99);
+			return rute;
 		}
 	}
 	
