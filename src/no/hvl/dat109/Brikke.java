@@ -49,7 +49,6 @@ public class Brikke {
 	public void flytt(int verdi, Brett brett) {
 		Rute nyRute = brett.finnNyRute(rute, verdi);
 			setPlass(nyRute);
-		
 	}
 	
 }
