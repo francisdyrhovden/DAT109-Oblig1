@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Stigespill stigespill = new Stigespill();
-		stigespill.spill();
+		Brukergrensesnitt bg = new Brukergrensesnitt(new Stigespill());
+		bg.start();
 	}
 }
