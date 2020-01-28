@@ -9,7 +9,7 @@ package no.hvl.dat109;
  */
 public class Stigespill {
 
-	private final static int WINPOINT = 99;
+	private final static int WINPOINT = 100;
 
 	private Terning terning;
 	private Brett brett;
@@ -60,11 +60,11 @@ public class Stigespill {
 			}
 			s.spillTrekk(terning, brett);
 			System.out.println(s.getNavn() + " trilte: " + terning.getVerdi());
+			System.out.println(s.getNavn() + " står nå på rute nr: " + s.getRuteNr() + "\n");
 			if (harVunnet(s)) {
 				vinner = s;
 				break;
 			}
-			System.out.println(s.getNavn() + " står nå på rute nr: " + s.getRuteNr() + "\n");
 			
 		}
 	}

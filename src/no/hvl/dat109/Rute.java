@@ -8,6 +8,8 @@ package no.hvl.dat109;
 public class Rute {
 	
 	private int nummer;
+	private Slange slange;
+	private Stige stige;
 	
 	/**
 	 * Oppretter et nytt rute-objekt
@@ -16,6 +18,8 @@ public class Rute {
 	 */
 	public Rute(int nummer) {
 		this.nummer = nummer;
+		this.slange = new Slange();
+		this.stige = new Stige();
 	}
 
 	/**
@@ -23,6 +27,14 @@ public class Rute {
 	 */
 	public int getNummer() {
 		return nummer;
+	}
+	
+	public Slange getSlange() {
+		return slange;
+	}
+	
+	public Stige getStige() {
+		return stige;
 	}
 
 }
