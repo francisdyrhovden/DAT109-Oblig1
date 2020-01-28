@@ -6,6 +6,8 @@ package no.hvl.dat109;
 import java.util.Scanner;
 
 /**
+ * Definerer et brukergrensesnitt for spillet.
+ * 
  * @author Francis, Johann og Lasse
  *
  */
@@ -17,6 +19,10 @@ public class Brukergrensesnitt {
 		this.stigespill = stigespill;
 	}
 
+	
+	/**
+	 * Starter oppsettet av spillet.
+	 */
 	public void start() {
 
 		Scanner sc = new Scanner(System.in);
