@@ -43,9 +43,11 @@ public class Brett {
 	}
 	
 	/**
+	 * Velger den nye ruten som brikken skal flyttes til.
+	 * 
 	 * @param rute Nåværende rute som brikken står på
 	 * @param verdi Verdien på terningen og antall plasser som brikken skal flyttes
-	 * @return Returnerer den nye ruten som brikken skal flyttes til
+	 * @return Returnerer den nye ruten som brikken skal flyttes til.
 	 */
 	public Rute finnNyRute(Rute rute, int verdi) {
 		int nyRute = rute.getNummer() + verdi;
