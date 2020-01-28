@@ -40,5 +40,16 @@ public class Brikke {
 	public void setPlass(Rute rute) {
 		this.rute = rute;
 	}
+
+	/**
+	 *  Flytter brikken gitt antall steg. Hvis man "passerer" siste rute vil brikken bli automatisk satt på siste rute.
+	 * 
+	 * @param verdi Verdien til antall steg
+	 */
+	public void flytt(int verdi, Brett brett) {
+		Rute nyRute = brett.finnNyRute(rute, verdi);
+			setPlass(nyRute);
+		
+	}
 	
 }

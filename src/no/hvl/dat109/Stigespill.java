@@ -26,12 +26,12 @@ public class Stigespill {
 		this.brett = new Brett();
 		this.vinner = null;
 	}
-
+	
 	
 	/**
-	 * Starter selve spillet 
+	 * Velger antall spillere og gjør de klar for spillet.
 	 */
-	public void run() {
+	public void setup() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Spillet er klar til å starte.\n Skriv inn antall spillere (2-4)");
 		int antall = sc.nextInt();
@@ -44,12 +44,20 @@ public class Stigespill {
 			String farge = sc.next();
 			spillere[i] = new Spiller(navn,farge);
 		}
-		sc.close();
+	}
+
+	
+	/**
+	 * Starter selve spillet 
+	 */
+	public void spill() {
+		setup();
+		System.out.println("\n-------------------- SPILLET STARTER -------------------------------\n");
 
 		while (vinner == null) {
 			spillRunde();
 		}
-		System.out.println(vinner.getNavn() + " har vunnet");
+		System.out.println("\n" + vinner.getNavn() + " har vunnet.");
 	}
 
 	/**
@@ -63,20 +71,19 @@ public class Stigespill {
 				System.in.read();
 			} catch(Exception e) {
 			}
-			s.trill(terning);
-			Rute rute = s.getBrikke().getPlass();
-			System.out.println(s.getNavn() + " var på rute nr: " + rute.getTall());
-			int verdi = terning.getVerdi();
-			System.out.println(s.getNavn() + " trilte: " + verdi);
-			if (rute.getTall() + verdi >= WINPOINT) {
+			s.spillTrekk(terning, brett);
+			System.out.println(s.getNavn() + " trilte: " + terning.getVerdi());
+			if (harVunnet(s)) {
 				vinner = s;
 				break;
 			}
-			Rute nyRute = brett.finnNyRute(rute, verdi);
-			s.getBrikke().setPlass(nyRute);
-			System.out.println(s.getNavn() + " står nå på rute nr: " + s.getBrikke().getPlass().getTall() + "\n");
+			System.out.println(s.getNavn() + " står nå på rute nr: " + s.getRuteNr() + "\n");
 			
 		}
-
 	}
+	
+	private boolean harVunnet(Spiller s) {
+		return s.getRuteNr() >= WINPOINT;
+	}
+	
 }

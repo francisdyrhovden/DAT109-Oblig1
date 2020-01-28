@@ -29,7 +29,11 @@ public class Brett {
 	 */
 	public Rute finnNyRute(Rute rute, int verdi) {
 		int nyRute = rute.getTall() + verdi;
-		return ruter.get(nyRute);
+		if (nyRute <= 99) {
+			return ruter.get(nyRute);	
+		} else {
+			return ruter.get(99);
+		}
 	}
 	
 

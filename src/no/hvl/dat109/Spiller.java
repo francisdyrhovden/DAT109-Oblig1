@@ -24,12 +24,14 @@ public class Spiller {
 	
 	
 	/**
-	 * Lar spiller trille en terning
+	 * Lar spiller spille sitt trekk.
 	 * 
 	 * @param terning Terningen som skal trilles
 	 */
-	public void trill(Terning terning) {
+	public void spillTrekk(Terning terning, Brett brett) {
 		terning.trill();
+		int verdi = terning.getVerdi();
+		brikke.flytt(verdi, brett);
 	}
 
 	
@@ -48,4 +50,11 @@ public class Spiller {
 		return brikke;
 	}
 	
+	
+	/**
+	 * @return Returnerer rutenummer til brikken til spilleren
+	 */
+	public int getRuteNr() {
+		return brikke.getPlass().getTall();
+	}	
 }
