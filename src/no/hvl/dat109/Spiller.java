@@ -55,6 +55,6 @@ public class Spiller {
 	 * @return Returnerer rutenummer til brikken til spilleren
 	 */
 	public int getRuteNr() {
-		return brikke.getPlass().getTall();
+		return brikke.getPlass().getNummer();
 	}	
 }

@@ -82,6 +82,13 @@ public class Stigespill {
 		}
 	}
 	
+	
+	/**
+	 * Sjekker om spilleren har vunnet.
+	 * 
+	 * @param s Spilleren som potensielt har vunnet.
+	 * @return Returnerer true om spiller har vunnet, og false hvis ikke.
+	 */
 	private boolean harVunnet(Spiller s) {
 		return s.getRuteNr() >= WINPOINT;
 	}

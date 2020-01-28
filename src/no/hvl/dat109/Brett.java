@@ -28,7 +28,7 @@ public class Brett {
 	 * @return Returnerer den nye ruten som brikken skal flyttes til
 	 */
 	public Rute finnNyRute(Rute rute, int verdi) {
-		int nyRute = rute.getTall() + verdi;
+		int nyRute = rute.getNummer() + verdi;
 		if (nyRute <= 99) {
 			return ruter.get(nyRute);	
 		} else {
