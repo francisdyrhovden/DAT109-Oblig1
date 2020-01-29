@@ -13,7 +13,7 @@ public class Brett {
 	private List<Rute> ruter;
 	
 	/**
-	 * Oppretter et nytt Brett-objekt med 100 ruter
+	 * Oppretter et nytt Brett-objekt med 100 ruter med slanger og stiger.
 	 */
 	public Brett() {
 		ruter = new ArrayList<Rute>();
@@ -54,10 +54,10 @@ public class Brett {
 		
 		if (rute.getSlange().getLengde() > 0) {
 			nyRute -= rute.getSlange().getLengde();
-			System.out.println("DU LANDET PÅ EN SLANGE, LOL!");
+			System.out.println("DU LANDET PÅ EN SLANGE");
 		} else if (rute.getStige().getLengde() > 0) {
 			nyRute += rute.getStige().getLengde();
-			System.out.println("DU LANDET PÅ EN STIGE, WEHOO!");
+			System.out.println("DU LANDET PÅ EN STIGE");
 		}
 		
 		if (nyRute <= 99) {
@@ -67,7 +67,13 @@ public class Brett {
 		}
 	}
 	
-
-	
+	/**
+	 * Gir oss første ruten på brettet.
+	 * 
+	 * @return Returnerer første ruten på brettet.
+	 */
+	public Rute getStart() {
+		return ruter.get(0);
+	}
 	
 }

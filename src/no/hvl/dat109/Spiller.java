@@ -9,6 +9,7 @@ public class Spiller {
 	
 	private String navn;
 	private Brikke brikke;
+	private int seksere;
 	
 	
 	/**
@@ -20,6 +21,7 @@ public class Spiller {
 	public Spiller(String navn, String farge) {
 		this.navn = navn;
 		this.brikke = new Brikke(farge);
+		this.seksere = 0;
 	}
 	
 	
@@ -31,7 +33,16 @@ public class Spiller {
 	public void spillTrekk(Terning terning, Brett brett) {
 		terning.trill();
 		int verdi = terning.getVerdi();
-		brikke.flytt(verdi, brett);
+		if (verdi == 6) {
+			seksere++;
+		}
+		
+		if (seksere == 3) {
+			System.out.println("Du trilte tre seksere på rad og blir flyttet tilbake til start.");
+			brikke.flyttTilStart(brett);
+		} else {			
+			brikke.flytt(verdi, brett);
+		}
 	}
 
 	

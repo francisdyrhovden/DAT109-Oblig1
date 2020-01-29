@@ -51,4 +51,14 @@ public class Brikke {
 			setPlass(nyRute);
 	}
 	
+	/**
+	 * Flytter brikken til start.
+	 * 
+	 * @param brett Brettet som spilles på.
+	 */
+	public void flyttTilStart(Brett brett) {
+		Rute start = brett.getStart();
+		setPlass(start);
+	}
+	
 }
