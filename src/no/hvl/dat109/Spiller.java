@@ -75,7 +75,7 @@ public class Spiller {
 	 * 
 	 * @return Returnerer true hvis spilleren har trilt tre seksere på rad.
 	 */
-	public boolean treSeksere() {
+	private boolean treSeksere() {
 		return seksere == 3;
 	}
 	
@@ -85,7 +85,7 @@ public class Spiller {
 	 * 
 	 * @param verdi Verdien på terningen som trilles.
 	 */
-	public void erPåStart(int verdi) {
+	private void erPåStart(int verdi) {
 		if (verdi == 6) {
 			flyttetTilbake = false;
 			System.out.println("Du kan nå trille som normalt fra neste runde.");
