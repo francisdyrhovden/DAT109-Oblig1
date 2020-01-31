@@ -22,9 +22,6 @@ public class Rute {
 		this.stige = new Stige();
 	}
 
-	/**
-	 * @return Returnerer tallet til ruten
-	 */
 	public int getNummer() {
 		return nummer;
 	}

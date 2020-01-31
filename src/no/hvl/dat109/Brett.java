@@ -6,12 +6,12 @@ import java.util.List;
 /**
  * @author Francis, Johann og Lasse
  * 
- * En klasse for å representere et brett
+ *         En klasse for å representere et brett
  */
 public class Brett {
-	
+
 	private List<Rute> ruter;
-	
+
 	/**
 	 * Oppretter et nytt Brett-objekt med 100 ruter med slanger og stiger.
 	 */
@@ -20,8 +20,8 @@ public class Brett {
 		for (int i = 0; i < 100; i++) {
 			ruter.add(new Rute(i));
 		}
-		
-		//Slanger
+
+		// Slanger
 		ruter.get(98).getSlange().setLengde(21);
 		ruter.get(94).getSlange().setLengde(20);
 		ruter.get(92).getSlange().setLengde(20);
@@ -30,8 +30,8 @@ public class Brett {
 		ruter.get(61).getSlange().setLengde(43);
 		ruter.get(53).getSlange().setLengde(20);
 		ruter.get(16).getSlange().setLengde(10);
-		
-		//Stiger
+
+		// Stiger
 		ruter.get(3).getStige().setLengde(10);
 		ruter.get(8).getStige().setLengde(22);
 		ruter.get(19).getStige().setLengde(18);
@@ -41,32 +41,32 @@ public class Brett {
 		ruter.get(62).getStige().setLengde(18);
 		ruter.get(70).getStige().setLengde(20);
 	}
-	
+
 	/**
 	 * Velger den nye ruten som brikken skal flyttes til.
 	 * 
-	 * @param rute Nåværende rute som brikken står på
+	 * @param rute  Nåværende rute som brikken står på
 	 * @param verdi Verdien på terningen og antall plasser som brikken skal flyttes
 	 * @return Returnerer den nye ruten som brikken skal flyttes til.
 	 */
 	public Rute finnNyRute(Rute rute, int verdi) {
 		int nyRute = rute.getNummer() + verdi;
-		
-		if (rute.getSlange().getLengde() > 0) {
-			nyRute -= rute.getSlange().getLengde();
-			System.out.println("DU LANDET PÅ EN SLANGE");
-		} else if (rute.getStige().getLengde() > 0) {
-			nyRute += rute.getStige().getLengde();
-			System.out.println("DU LANDET PÅ EN STIGE");
-		}
-		
-		if (nyRute <= 99) {
-			return ruter.get(nyRute);	
-		} else {
+
+		if (nyRute > 99) {
 			return rute;
+		} else {
+
+			if (ruter.get(nyRute).getSlange().getLengde() > 0) {
+				nyRute -= ruter.get(nyRute).getSlange().getLengde();
+				System.out.println("DU LANDET PÅ EN SLANGE");
+			} else if (ruter.get(nyRute).getStige().getLengde() > 0) {
+				nyRute += ruter.get(nyRute).getStige().getLengde();
+				System.out.println("DU LANDET PÅ EN STIGE");
+			}
+			return ruter.get(nyRute);
 		}
 	}
-	
+
 	/**
 	 * Gir oss første ruten på brettet.
 	 * 
@@ -75,5 +75,5 @@ public class Brett {
 	public Rute getStart() {
 		return ruter.get(0);
 	}
-	
+
 }

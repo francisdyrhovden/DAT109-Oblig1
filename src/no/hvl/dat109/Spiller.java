@@ -3,7 +3,7 @@ package no.hvl.dat109;
 /**
  * @author Francis, Johann og Lasse
  * 
- *         En klasse for å representere en spiller.
+ * En klasse for å representere en spiller.
  */
 public class Spiller {
 
@@ -75,7 +75,7 @@ public class Spiller {
 	 * 
 	 * @return Returnerer true hvis spilleren har trilt tre seksere på rad.
 	 */
-	private boolean treSeksere() {
+	public boolean treSeksere() {
 		return seksere == 3;
 	}
 	
